@@ -1,0 +1,28 @@
+---
+configs:
+    use: 'custom'
+    default:
+        vmname: 'generic-debian9'
+        hostname: 'debian'
+        cpu: 1
+        mem: 2048
+        maxmem: 2048
+        network: 'private_network'
+        bridge: 'Ethernet Bridge'
+        mac: '00155d0dabc5'
+        vlan: 1
+        type: 'dhcp'
+        ip: '192.168.1.123'
+    custom:
+        vmname: 'olsr-dev'
+        hostname: 'dev9'
+        cpu: 16
+        mem: 32768
+        maxmem: 32768
+        network: 'public_network'
+        bridge: 'Extern Silver-Server'
+        mac: '00155d0dabc7'
+        vlan: 1100
+        type: 'static'
+        ip: '10.5.44.230'
+        
