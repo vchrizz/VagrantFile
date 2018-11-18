@@ -75,7 +75,7 @@ Vagrant.configure("2") do |config|
     # configuration
     #
     echo "installing additional required jenkins plugins ..."
-    java -jar /var/cache/jenkins/war/WEB-INF/jenkins-cli.jar -s "http://localhost:8080" -auth jenkins-debian-glue:${jenkinspass} install-plugin pipeline-milestone-step lockable-resources cloudbees-folder pipeline-model-definition workflow-cps workflow-multibranch pipeline-stage-step pipeline-stage-view workflow-cps-global-lib jackson2-api pipeline-build-step
+    java -jar /var/cache/jenkins/war/WEB-INF/jenkins-cli.jar -s "http://localhost:8080" -auth jenkins-debian-glue:${jenkinspass} install-plugin ansible pipeline-milestone-step lockable-resources cloudbees-folder pipeline-model-definition workflow-cps workflow-multibranch pipeline-stage-step pipeline-stage-view workflow-cps-global-lib jackson2-api pipeline-build-step
     echo "create custom jenkins-user ..."
     echo 'jenkins.model.Jenkins.instance.securityRealm.createAccount("'${username}'","'${password}'")' | java -jar /var/cache/jenkins/war/WEB-INF/jenkins-cli.jar -s "http://localhost:8080" -auth jenkins-debian-glue:${jenkinspass} -noKeyAuth groovy =
     #echo "set jenkins url ..."
